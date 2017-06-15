@@ -24,4 +24,6 @@
 
 + (bool)boolForKey:(NSString *)key;
 
++ (NSDate *)dateForKey:(NSString *)key;
+
 @end

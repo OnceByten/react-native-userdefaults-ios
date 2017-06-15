@@ -45,4 +45,16 @@
     return [[NSUserDefaults standardUserDefaults] boolForKey:key];
 }
 
++ (NSString *)dateForKey:(NSString *) key {
+    
+    NSDate *date = (NSDate *)[[NSUserDefaults standardUserDefaults] objectForKey:key];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:date];
+    
+    return dateString;
+}
+
 @end

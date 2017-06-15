@@ -83,4 +83,18 @@ RCT_EXPORT_METHOD(boolForKey:(NSString *)key callback:(RCTResponseSenderBlock)ca
     callback(@[[NSNull null], [NSNumber numberWithBool:response]]);
 }
 
+RCT_EXPORT_METHOD(dateForKey:(NSString *)key callback:(RCTResponseSenderBlock)callback) {
+    
+    id response = [UserDefaultsManager dateForKey:key];
+    
+    if (response) {
+        
+        callback(@[[NSNull null], response]);
+    }
+    else {
+        
+        callback(@[[NSNull null], [NSNull null]]);
+    }
+}
+
 @end

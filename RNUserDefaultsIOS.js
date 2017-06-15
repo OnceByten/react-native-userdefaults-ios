@@ -11,6 +11,7 @@ var _arrayForKey = Promise.promisify(UserDefaults.arrayForKey);
 var _stringForKey = Promise.promisify(UserDefaults.stringForKey);
 var _objectForKey = Promise.promisify(UserDefaults.objectForKey);
 var _boolForKey = Promise.promisify(UserDefaults.boolForKey);
+var _dateForKey = Promise.promisify(UserDefaults.dateForKey);
 
 var _removeItemForKey = Promise.promisify(UserDefaults.removeObjectForKey);
 
@@ -38,6 +39,9 @@ var UserDefaults = {
     },
     boolForKey(key) {
         return _boolForKey(key);
+    },
+    dateForKey(key) {
+        return _dateForKey(key);
     },
     removeItemForKey(key) {
         return _removeItemForKey(key);
